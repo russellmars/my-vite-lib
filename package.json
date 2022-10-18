@@ -1,0 +1,38 @@
+{
+  "name": "my-lib",
+  "type": "module",
+  "version": "0.0.1-beta.0",
+  "exports": {
+    ".": {
+      "require": "./dist/index.umd.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "bumpp": "bumpp package.json --commit --push --tag",
+    "prepublish": "npm run lint && npm run bumpp",
+    "release": "npm publish",
+    "release:beta": "npm publish --tag beta"
+  },
+  "dependencies": {
+    "@types/node": "14.18.32"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@vue/runtime-core": "^3.2.41",
+    "eslint": "^8.25.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.8",
+    "vite-plugin-dts": "^1.6.6"
+  }
+}
