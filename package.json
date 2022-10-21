@@ -20,9 +20,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "bumpp": "bumpp package.json --commit --push --tag",
-    "prepublish": "npm run lint && npm run bumpp",
+    "prepublishOnly": "npm run lint && npm run bumpp",
     "release": "npm publish",
-    "release:beta": "npm publish --tag beta"
+    "release:next": "npm publish --tag beta"
   },
   "dependencies": {
     "@types/node": "14.18.32"
